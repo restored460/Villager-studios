@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class Attack : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void OnTriggerEnter(Collider other)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (Input.GetKey(KeyCode.E) && other.gameObject.CompareTag("Enemy")) // Checks if e key is pressed and if they tag is enemy
+        {
+            Debug.Log("Works");
+            Destroy(other.gameObject);
+        }
     }
 }
+
