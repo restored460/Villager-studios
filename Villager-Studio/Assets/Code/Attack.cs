@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class Attack : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+
+
+    public void OnTriggerEnter(Collider other)
     {
-        if (Input.GetKey(KeyCode.E) && other.gameObject.CompareTag("Enemy")) // Checks if e key is pressed and if they tag is enemy
+       
         {
-            Debug.Log("Works");
-            Destroy(other.gameObject);
+            if (Input.GetKey(KeyCode.E) && other.gameObject.CompareTag("Enemy")) // Checks if e key is pressed and if they tag is enemy
+            {
+                Debug.Log("Works");
+                Destroy(other.gameObject);
+            }
         }
     }
 }
